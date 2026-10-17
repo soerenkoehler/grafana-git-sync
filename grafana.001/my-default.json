@@ -350,7 +350,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "count by (alertstate) (GRAFANA_ALERTS{alertstate=\"firing\"})",
+                        "expr": "count by (alertstate) (GRAFANA_ALERTS{alertstate=\"firing\"}) or vector(0)",
                         "format": "time_series",
                         "instant": false,
                         "legendFormat": "Alerts",
@@ -373,7 +373,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "-(count by (alertstate) (GRAFANA_ALERTS{alertstate=\"firing\"}))",
+                        "expr": "-(count by (alertstate) (GRAFANA_ALERTS{alertstate=\"firing\"})) or vector(0)",
                         "format": "time_series",
                         "instant": false,
                         "legendFormat": "Baseline",
