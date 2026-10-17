@@ -350,7 +350,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "count by (alertstate) (GRAFANA_ALERTS{alertstate=\"firing\"}) or vector(0)",
+                        "expr": "count (GRAFANA_ALERTS{alertstate=\"firing\"}) or vector(0)",
                         "format": "time_series",
                         "instant": false,
                         "legendFormat": "Alerts",
@@ -373,7 +373,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "-(count by (alertstate) (GRAFANA_ALERTS{alertstate=\"firing\"})) or vector(0)",
+                        "expr": "(count (GRAFANA_ALERTS{alertstate=\"firing\"}) or vector(0))==0",
                         "format": "time_series",
                         "instant": false,
                         "legendFormat": "Baseline",
@@ -400,9 +400,8 @@
               "fieldConfig": {
                 "defaults": {
                   "color": {
-                    "fixedColor": "red",
-                    "mode": "thresholds",
-                    "seriesBy": "last"
+                    "mode": "continuous-GrYlRd",
+                    "seriesBy": "max"
                   },
                   "custom": {
                     "axisBorderShow": false,
@@ -411,7 +410,7 @@
                     "axisLabel": "",
                     "axisPlacement": "auto",
                     "barAlignment": 0,
-                    "barWidthFactor": 0.6,
+                    "barWidthFactor": 0.9,
                     "drawStyle": "line",
                     "fillOpacity": 75,
                     "gradientMode": "opacity",
@@ -426,11 +425,11 @@
                       "fill": "solid"
                     },
                     "lineWidth": 1,
-                    "pointSize": 5,
+                    "pointSize": 1,
                     "scaleDistribution": {
                       "type": "linear"
                     },
-                    "showPoints": "never",
+                    "showPoints": "always",
                     "showValues": false,
                     "spanNulls": false,
                     "stacking": {
@@ -442,8 +441,6 @@
                     }
                   },
                   "decimals": 0,
-                  "min": 0,
-                  "noValue": "0",
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
@@ -454,24 +451,7 @@
                     ]
                   }
                 },
-                "overrides": [
-                  {
-                    "matcher": {
-                      "id": "byName",
-                      "options": "Alerts",
-                      "scope": "series"
-                    },
-                    "properties": [
-                      {
-                        "id": "color",
-                        "value": {
-                          "fixedColor": "red",
-                          "mode": "fixed"
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "overrides": []
               },
               "options": {
                 "legend": {
