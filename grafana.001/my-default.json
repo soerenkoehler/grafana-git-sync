@@ -27,7 +27,6 @@
       }
     ],
     "cursorSync": "Off",
-    "description": "",
     "editable": true,
     "elements": {
       "panel-1": {
@@ -442,6 +441,7 @@
                       "mode": "off"
                     }
                   },
+                  "decimals": 0,
                   "min": 0,
                   "noValue": "0",
                   "thresholds": {
