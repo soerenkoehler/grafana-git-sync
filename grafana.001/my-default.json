@@ -342,10 +342,10 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "count (GRAFANA_ALERTS{alertstate=\"firing\"}) or vector(0)",
+                        "expr": "count (GRAFANA_ALERTS{alertstate=\"pending\"}) or ((count (GRAFANA_ALERTS{alertstate=\"firing\"}) or vector(0)) == 0)",
                         "format": "time_series",
                         "instant": false,
-                        "legendFormat": "Alerts",
+                        "legendFormat": "Pending",
                         "range": true
                       },
                       "version": "v0"
@@ -365,7 +365,30 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "(count (GRAFANA_ALERTS{alertstate=\"firing\"}) or vector(0))==0",
+                        "expr": "count (GRAFANA_ALERTS{alertstate=\"firing\"}) or ((count (GRAFANA_ALERTS{alertstate=\"pending\"}) or vector(0)) == 0)",
+                        "format": "time_series",
+                        "instant": false,
+                        "legendFormat": "Firing",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "(count (GRAFANA_ALERTS{alertstate=~\"firing|pending\"}) or vector(0))==0",
                         "format": "time_series",
                         "instant": false,
                         "legendFormat": "Baseline",
@@ -373,7 +396,7 @@
                       },
                       "version": "v0"
                     },
-                    "refId": "B"
+                    "refId": "C"
                   }
                 }
               ],
