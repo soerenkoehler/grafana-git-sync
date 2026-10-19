@@ -1555,6 +1555,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "builder",
+                        "exemplar": false,
                         "expr": "avg by(friendly_name) (fritz_dsl_status{friendly_name=~\"ASL-7490|LG-5690\"})",
                         "instant": false,
                         "legendFormat": "DSL {{friendly_name}}",
@@ -1603,13 +1604,13 @@
                           "color": "red",
                           "index": 0
                         },
-                        "to": 0.8
+                        "to": 0.7
                       },
                       "type": "range"
                     },
                     {
                       "options": {
-                        "from": 0.8,
+                        "from": 0.7,
                         "result": {
                           "color": "green",
                           "index": 1
@@ -1621,6 +1622,7 @@
                   ],
                   "max": 1,
                   "min": 0,
+                  "noValue": "0",
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
