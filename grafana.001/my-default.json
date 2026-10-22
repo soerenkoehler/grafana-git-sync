@@ -319,7 +319,7 @@
                 }
               }
             },
-            "version": "13.3.0-38695524555"
+            "version": "13.3.0-39214152447"
           }
         }
       },
@@ -466,7 +466,53 @@
                     ]
                   }
                 },
-                "overrides": []
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Pending"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "yellow",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Firing"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "red",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Baseline"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "green",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
               "options": {
                 "legend": {
@@ -482,7 +528,7 @@
                 }
               }
             },
-            "version": "13.3.0-38695524555"
+            "version": "13.3.0-39214152447"
           }
         }
       },
@@ -635,7 +681,7 @@
                 "zebraStriping": false
               }
             },
-            "version": "13.3.0-38695524555"
+            "version": "13.3.0-39214152447"
           }
         }
       },
@@ -1511,7 +1557,7 @@
                 }
               }
             },
-            "version": "13.3.0-38695524555"
+            "version": "13.3.0-39214152447"
           }
         }
       },
@@ -1652,7 +1698,7 @@
                 }
               }
             },
-            "version": "13.3.0-38695524555"
+            "version": "13.3.0-39214152447"
           }
         }
       }
